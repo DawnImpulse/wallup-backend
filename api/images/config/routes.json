@@ -18,6 +18,14 @@
     },
     {
       "method": "GET",
+      "path": "/images/random",
+      "handler": "images.random",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
       "path": "/images/:id",
       "handler": "images.findOne",
       "config": {
@@ -44,14 +52,6 @@
       "method": "DELETE",
       "path": "/images/:id",
       "handler": "images.delete",
-      "config": {
-        "policies": []
-      }
-    },
-    {
-      "method": "GET",
-      "path": "/images/random",
-      "handler": "images.random",
       "config": {
         "policies": []
       }

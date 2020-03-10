@@ -9,7 +9,10 @@
     "build": "strapi build",
     "strapi": "strapi"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.8.0"
+  },
   "dependencies": {
     "knex": "<0.20.0",
     "sqlite3": "latest",
