@@ -47,6 +47,14 @@
       "config": {
         "policies": []
       }
+    },
+    {
+      "method": "GET",
+      "path": "/images/random",
+      "handler": "images.random",
+      "config": {
+        "policies": []
+      }
     }
   ]
 }
