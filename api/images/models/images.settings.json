@@ -1,4 +1,5 @@
 {
+  "kind": "collectionType",
   "connection": "default",
   "collectionName": "images",
   "info": {
@@ -9,8 +10,20 @@
     "timestamps": true
   },
   "attributes": {
+    "iid": {
+      "type": "uid",
+      "required": true
+    },
     "link": {
-      "type": "json"
+      "type": "component",
+      "repeatable": false,
+      "component": "image.link"
+    },
+    "category": {
+      "model": "category"
+    },
+    "inCollection": {
+      "model": "collection"
     }
   }
 }

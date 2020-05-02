@@ -1,0 +1,24 @@
+{
+  "connection": "default",
+  "collectionName": "components_image_links",
+  "info": {
+    "name": "link",
+    "icon": "link"
+  },
+  "options": {},
+  "attributes": {
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "unsplash",
+        "pexels",
+        "imagekit"
+      ],
+      "required": true
+    },
+    "path": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
