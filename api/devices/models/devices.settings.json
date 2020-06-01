@@ -1,25 +1,28 @@
 {
   "kind": "collectionType",
-  "connection": "default",
-  "collectionName": "images",
+  "collectionName": "devices",
   "info": {
-    "name": "image"
+    "name": "device"
   },
   "options": {
     "increments": true,
     "timestamps": true
   },
   "attributes": {
-    "iid": {
-      "type": "uid",
-      "required": true
-    },
-    "link": {
+    "name": {
       "type": "string",
       "required": true
     },
-    "device": {
-      "model": "devices"
+    "did": {
+      "type": "uid",
+      "required": true
+    },
+    "cover": {
+      "type": "string",
+      "required": true
+    },
+    "brand": {
+      "model": "brand"
     }
   }
 }

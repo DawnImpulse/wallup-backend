@@ -26,6 +26,14 @@
     },
     {
       "method": "GET",
+      "path": "/images/homescreen",
+      "handler": "images.homescreen",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
       "path": "/images/:id",
       "handler": "images.findOne",
       "config": {

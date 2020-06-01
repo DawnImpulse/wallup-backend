@@ -10,8 +10,6 @@
     "type": {
       "type": "enumeration",
       "enum": [
-        "unsplash",
-        "pexels",
         "imagekit"
       ],
       "required": true

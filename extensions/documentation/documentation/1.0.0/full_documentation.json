@@ -14,11 +14,12 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "05/02/2020 10:05:08 AM"
+    "x-generation-date": "06/01/2020 8:55:11 AM"
   },
   "x-strapi-config": {
     "path": "/documentation",
-    "showGeneratedFiles": true
+    "showGeneratedFiles": true,
+    "generateDefaultResponse": true
   },
   "servers": [
     {
@@ -44,7 +45,7 @@
     }
   ],
   "paths": {
-    "/categories": {
+    "/brands": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -56,7 +57,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Category"
+                    "$ref": "#/components/schemas/Brand"
                   }
                 }
               }
@@ -95,7 +96,7 @@
         },
         "summary": "",
         "tags": [
-          "Category"
+          "Brand"
         ],
         "parameters": [
           {
@@ -245,7 +246,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Category"
+                  "$ref": "#/components/schemas/Brand"
                 }
               }
             }
@@ -283,7 +284,7 @@
         },
         "summary": "",
         "tags": [
-          "Category"
+          "Brand"
         ],
         "requestBody": {
           "description": "",
@@ -291,14 +292,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewCategory"
+                "$ref": "#/components/schemas/NewBrand"
               }
             }
           }
         }
       }
     },
-    "/categories/count": {
+    "/brands/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -350,12 +351,12 @@
         },
         "summary": "",
         "tags": [
-          "Category"
+          "Brand"
         ],
         "parameters": []
       }
     },
-    "/categories/{id}": {
+    "/brands/{id}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -365,7 +366,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Category"
+                  "$ref": "#/components/schemas/Brand"
                 }
               }
             }
@@ -403,7 +404,7 @@
         },
         "summary": "",
         "tags": [
-          "Category"
+          "Brand"
         ],
         "parameters": [
           {
@@ -427,7 +428,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Category"
+                  "$ref": "#/components/schemas/Brand"
                 }
               }
             }
@@ -465,7 +466,7 @@
         },
         "summary": "",
         "tags": [
-          "Category"
+          "Brand"
         ],
         "requestBody": {
           "description": "",
@@ -473,7 +474,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewCategory"
+                "$ref": "#/components/schemas/NewBrand"
               }
             }
           }
@@ -539,7 +540,7 @@
         },
         "summary": "",
         "tags": [
-          "Category"
+          "Brand"
         ],
         "parameters": [
           {
@@ -555,19 +556,19 @@
         ]
       }
     },
-    "/collections": {
+    "/devices": {
       "get": {
         "deprecated": false,
-        "description": "",
+        "description": "Find all the devices's records",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve devices document(s)",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Collection"
+                    "$ref": "#/components/schemas/Devices"
                   }
                 }
               }
@@ -606,7 +607,7 @@
         },
         "summary": "",
         "tags": [
-          "Collection"
+          "Devices"
         ],
         "parameters": [
           {
@@ -749,14 +750,14 @@
       },
       "post": {
         "deprecated": false,
-        "description": "Create a new record",
+        "description": "Create a new devices record",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve devices document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Collection"
+                  "$ref": "#/components/schemas/Devices"
                 }
               }
             }
@@ -794,7 +795,7 @@
         },
         "summary": "",
         "tags": [
-          "Collection"
+          "Devices"
         ],
         "requestBody": {
           "description": "",
@@ -802,20 +803,20 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewCollection"
+                "$ref": "#/components/schemas/NewDevices"
               }
             }
           }
         }
       }
     },
-    "/collections/count": {
+    "/devices/count": {
       "get": {
         "deprecated": false,
-        "description": "",
+        "description": "Retrieve the numver of devices documents",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve devices document(s)",
             "content": {
               "application/json": {
                 "schema": {
@@ -861,22 +862,22 @@
         },
         "summary": "",
         "tags": [
-          "Collection"
+          "Devices"
         ],
         "parameters": []
       }
     },
-    "/collections/{id}": {
+    "/devices/{id}": {
       "get": {
         "deprecated": false,
-        "description": "",
+        "description": "Find one devices record",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve devices document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Collection"
+                  "$ref": "#/components/schemas/Devices"
                 }
               }
             }
@@ -914,7 +915,7 @@
         },
         "summary": "",
         "tags": [
-          "Collection"
+          "Devices"
         ],
         "parameters": [
           {
@@ -931,14 +932,14 @@
       },
       "put": {
         "deprecated": false,
-        "description": "Update a record",
+        "description": "Update a single devices record",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve devices document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Collection"
+                  "$ref": "#/components/schemas/Devices"
                 }
               }
             }
@@ -976,7 +977,7 @@
         },
         "summary": "",
         "tags": [
-          "Collection"
+          "Devices"
         ],
         "requestBody": {
           "description": "",
@@ -984,7 +985,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewCollection"
+                "$ref": "#/components/schemas/NewDevices"
               }
             }
           }
@@ -1004,10 +1005,10 @@
       },
       "delete": {
         "deprecated": false,
-        "description": "Delete a record",
+        "description": "Delete a single devices record",
         "responses": {
           "200": {
-            "description": "deletes a single record based on the ID supplied",
+            "description": "deletes a single devices based on the ID supplied",
             "content": {
               "application/json": {
                 "schema": {
@@ -1050,7 +1051,7 @@
         },
         "summary": "",
         "tags": [
-          "Collection"
+          "Devices"
         ],
         "parameters": [
           {
@@ -1378,6 +1379,63 @@
       }
     },
     "/images/random": {
+      "get": {
+        "deprecated": false,
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "Retrieve images document(s)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Images"
+        ],
+        "parameters": []
+      }
+    },
+    "/images/homescreen": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -2144,7 +2202,7 @@
         },
         "summary": "",
         "tags": [
-          "Users-Permissions - Role"
+          "UsersPermissions - Role"
         ],
         "parameters": []
       }
@@ -2159,7 +2217,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Users-PermissionsRole"
+                  "$ref": "#/components/schemas/UsersPermissionsRole"
                 }
               }
             }
@@ -2197,7 +2255,7 @@
         },
         "summary": "",
         "tags": [
-          "Users-Permissions - Role"
+          "UsersPermissions - Role"
         ],
         "parameters": [
           {
@@ -2225,7 +2283,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Users-PermissionsRole"
+                    "$ref": "#/components/schemas/UsersPermissionsRole"
                   }
                 }
               }
@@ -2264,7 +2322,7 @@
         },
         "summary": "",
         "tags": [
-          "Users-Permissions - Role"
+          "UsersPermissions - Role"
         ],
         "parameters": [
           {
@@ -2414,7 +2472,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Users-PermissionsRole"
+                  "$ref": "#/components/schemas/UsersPermissionsRole"
                 }
               }
             }
@@ -2452,7 +2510,7 @@
         },
         "summary": "",
         "tags": [
-          "Users-Permissions - Role"
+          "UsersPermissions - Role"
         ],
         "requestBody": {
           "description": "",
@@ -2460,7 +2518,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewUsers-PermissionsRole"
+                "$ref": "#/components/schemas/NewUsersPermissionsRole"
               }
             }
           }
@@ -2477,7 +2535,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Users-PermissionsRole"
+                  "$ref": "#/components/schemas/UsersPermissionsRole"
                 }
               }
             }
@@ -2515,7 +2573,7 @@
         },
         "summary": "",
         "tags": [
-          "Users-Permissions - Role"
+          "UsersPermissions - Role"
         ],
         "parameters": [
           {
@@ -2535,7 +2593,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewUsers-PermissionsRole"
+                "$ref": "#/components/schemas/NewUsersPermissionsRole"
               }
             }
           }
@@ -2592,7 +2650,7 @@
         },
         "summary": "",
         "tags": [
-          "Users-Permissions - Role"
+          "UsersPermissions - Role"
         ],
         "parameters": [
           {
@@ -2620,7 +2678,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Users-PermissionsUser"
+                    "$ref": "#/components/schemas/UsersPermissionsUser"
                   }
                 }
               }
@@ -2659,7 +2717,7 @@
         },
         "summary": "",
         "tags": [
-          "Users-Permissions - User"
+          "UsersPermissions - User"
         ],
         "parameters": [
           {
@@ -2863,7 +2921,7 @@
         },
         "summary": "",
         "tags": [
-          "Users-Permissions - User"
+          "UsersPermissions - User"
         ],
         "parameters": []
       }
@@ -2920,7 +2978,7 @@
         },
         "summary": "",
         "tags": [
-          "Users-Permissions - User"
+          "UsersPermissions - User"
         ],
         "requestBody": {
           "description": "",
@@ -2949,7 +3007,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Users-PermissionsUser"
+                  "$ref": "#/components/schemas/UsersPermissionsUser"
                 }
               }
             }
@@ -2987,7 +3045,7 @@
         },
         "summary": "",
         "tags": [
-          "Users-Permissions - User"
+          "UsersPermissions - User"
         ],
         "requestBody": {
           "description": "",
@@ -2995,7 +3053,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewUsers-PermissionsUser"
+                "$ref": "#/components/schemas/NewUsersPermissionsUser"
               }
             }
           }
@@ -3054,7 +3112,7 @@
         },
         "summary": "",
         "tags": [
-          "Users-Permissions - User"
+          "UsersPermissions - User"
         ],
         "parameters": [
           {
@@ -3122,7 +3180,7 @@
         },
         "summary": "",
         "tags": [
-          "Users-Permissions - User"
+          "UsersPermissions - User"
         ],
         "requestBody": {
           "description": "",
@@ -3144,7 +3202,7 @@
     "/auth/reset-password": {
       "post": {
         "deprecated": false,
-        "description": "Change a user's password",
+        "description": "Reset user password with a code (resetToken)",
         "responses": {
           "200": {
             "description": "response",
@@ -3193,7 +3251,7 @@
         },
         "summary": "",
         "tags": [
-          "Users-Permissions - User"
+          "UsersPermissions - User"
         ],
         "requestBody": {
           "description": "",
@@ -3264,7 +3322,7 @@
         },
         "summary": "",
         "tags": [
-          "Users-Permissions - User"
+          "UsersPermissions - User"
         ],
         "parameters": []
       }
@@ -3321,7 +3379,7 @@
         },
         "summary": "",
         "tags": [
-          "Users-Permissions - User"
+          "UsersPermissions - User"
         ],
         "requestBody": {
           "description": "",
@@ -3352,7 +3410,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Users-PermissionsUser"
+                    "$ref": "#/components/schemas/UsersPermissionsUser"
                   }
                 }
               }
@@ -3391,7 +3449,7 @@
         },
         "summary": "",
         "tags": [
-          "Users-Permissions - User"
+          "UsersPermissions - User"
         ],
         "parameters": [
           {
@@ -3543,7 +3601,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Users-PermissionsUser"
+                  "$ref": "#/components/schemas/UsersPermissionsUser"
                 }
               }
             }
@@ -3581,7 +3639,7 @@
         },
         "summary": "",
         "tags": [
-          "Users-Permissions - User"
+          "UsersPermissions - User"
         ],
         "parameters": []
       }
@@ -3596,7 +3654,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Users-PermissionsUser"
+                  "$ref": "#/components/schemas/UsersPermissionsUser"
                 }
               }
             }
@@ -3634,7 +3692,7 @@
         },
         "summary": "",
         "tags": [
-          "Users-Permissions - User"
+          "UsersPermissions - User"
         ],
         "parameters": [
           {
@@ -3658,7 +3716,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Users-PermissionsUser"
+                  "$ref": "#/components/schemas/UsersPermissionsUser"
                 }
               }
             }
@@ -3696,7 +3754,7 @@
         },
         "summary": "",
         "tags": [
-          "Users-Permissions - User"
+          "UsersPermissions - User"
         ],
         "parameters": [
           {
@@ -3716,7 +3774,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewUsers-PermissionsUser"
+                "$ref": "#/components/schemas/NewUsersPermissionsUser"
               }
             }
           }
@@ -3773,7 +3831,7 @@
         },
         "summary": "",
         "tags": [
-          "Users-Permissions - User"
+          "UsersPermissions - User"
         ],
         "parameters": [
           {
@@ -3792,11 +3850,12 @@
   },
   "components": {
     "schemas": {
-      "Category": {
+      "Brand": {
         "required": [
           "id",
           "name",
-          "caid"
+          "cover",
+          "logo"
         ],
         "properties": {
           "id": {
@@ -3805,41 +3864,38 @@
           "name": {
             "type": "string"
           },
-          "caid": {
-            "type": "uid"
-          },
-          "image": {
+          "cover": {
             "type": "string"
           },
-          "cover": {
+          "logo": {
             "type": "string"
           }
         }
       },
-      "NewCategory": {
+      "NewBrand": {
         "required": [
           "name",
-          "caid"
+          "cover",
+          "logo"
         ],
         "properties": {
           "name": {
             "type": "string"
           },
-          "caid": {
-            "type": "uid"
-          },
-          "image": {
+          "cover": {
             "type": "string"
           },
-          "cover": {
+          "logo": {
             "type": "string"
           }
         }
       },
-      "Collection": {
+      "Devices": {
         "required": [
           "id",
-          "cid"
+          "name",
+          "did",
+          "cover"
         ],
         "properties": {
           "id": {
@@ -3848,26 +3904,53 @@
           "name": {
             "type": "string"
           },
-          "cid": {
+          "did": {
             "type": "uid"
           },
           "cover": {
             "type": "string"
+          },
+          "brand": {
+            "required": [
+              "id",
+              "name",
+              "cover",
+              "logo"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "cover": {
+                "type": "string"
+              },
+              "logo": {
+                "type": "string"
+              }
+            }
           }
         }
       },
-      "NewCollection": {
+      "NewDevices": {
         "required": [
-          "cid"
+          "name",
+          "did",
+          "cover"
         ],
         "properties": {
           "name": {
             "type": "string"
           },
-          "cid": {
+          "did": {
             "type": "uid"
           },
           "cover": {
+            "type": "string"
+          },
+          "brand": {
             "type": "string"
           }
         }
@@ -3875,7 +3958,8 @@
       "Images": {
         "required": [
           "id",
-          "iid"
+          "iid",
+          "link"
         ],
         "properties": {
           "id": {
@@ -3885,34 +3969,14 @@
             "type": "uid"
           },
           "link": {
-            "type": "object",
-            "required": [
-              "id",
-              "type",
-              "path"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "type": {
-                "type": "string",
-                "enum": [
-                  "unsplash",
-                  "pexels",
-                  "imagekit"
-                ]
-              },
-              "path": {
-                "type": "string"
-              }
-            }
+            "type": "string"
           },
-          "category": {
+          "device": {
             "required": [
               "id",
               "name",
-              "caid"
+              "did",
+              "cover"
             ],
             "properties": {
               "id": {
@@ -3921,33 +3985,13 @@
               "name": {
                 "type": "string"
               },
-              "caid": {
-                "type": "uid"
-              },
-              "image": {
-                "type": "string"
-              },
-              "cover": {
-                "type": "string"
-              }
-            }
-          },
-          "inCollection": {
-            "required": [
-              "id",
-              "cid"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "cid": {
+              "did": {
                 "type": "uid"
               },
               "cover": {
+                "type": "string"
+              },
+              "brand": {
                 "type": "string"
               }
             }
@@ -3956,45 +4000,22 @@
       },
       "NewImages": {
         "required": [
-          "iid"
+          "iid",
+          "link"
         ],
         "properties": {
           "iid": {
             "type": "uid"
           },
           "link": {
-            "type": "object",
-            "required": [
-              "id",
-              "type",
-              "path"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "type": {
-                "type": "string",
-                "enum": [
-                  "unsplash",
-                  "pexels",
-                  "imagekit"
-                ]
-              },
-              "path": {
-                "type": "string"
-              }
-            }
-          },
-          "category": {
             "type": "string"
           },
-          "inCollection": {
+          "device": {
             "type": "string"
           }
         }
       },
-      "Users-PermissionsRole": {
+      "UsersPermissionsRole": {
         "required": [
           "id",
           "name"
@@ -4089,7 +4110,7 @@
           }
         }
       },
-      "NewUsers-PermissionsRole": {
+      "NewUsersPermissionsRole": {
         "required": [
           "name"
         ],
@@ -4118,7 +4139,7 @@
           }
         }
       },
-      "Users-PermissionsUser": {
+      "UsersPermissionsUser": {
         "required": [
           "id",
           "username",
@@ -4181,7 +4202,7 @@
           }
         }
       },
-      "NewUsers-PermissionsUser": {
+      "NewUsersPermissionsUser": {
         "required": [
           "username",
           "email"
@@ -4244,10 +4265,10 @@
   },
   "tags": [
     {
-      "name": "Category"
+      "name": "Brand"
     },
     {
-      "name": "Collection"
+      "name": "Devices"
     },
     {
       "name": "Images"
@@ -4259,10 +4280,10 @@
       "name": "Upload - File"
     },
     {
-      "name": "Users-Permissions - Role"
+      "name": "UsersPermissions - Role"
     },
     {
-      "name": "Users-Permissions - User"
+      "name": "UsersPermissions - User"
     }
   ]
 }

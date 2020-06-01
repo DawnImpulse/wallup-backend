@@ -1,18 +1,18 @@
 {
   "paths": {
-    "/images": {
+    "/brands": {
       "get": {
         "deprecated": false,
-        "description": "Find all the images's records",
+        "description": "",
         "responses": {
           "200": {
-            "description": "Retrieve images document(s)",
+            "description": "response",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Images"
+                    "$ref": "#/components/schemas/Brand"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Images"
+          "Brand"
         ],
         "parameters": [
           {
@@ -194,14 +194,14 @@
       },
       "post": {
         "deprecated": false,
-        "description": "Create a new images record",
+        "description": "Create a new record",
         "responses": {
           "200": {
-            "description": "Retrieve images document(s)",
+            "description": "response",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Images"
+                  "$ref": "#/components/schemas/Brand"
                 }
               }
             }
@@ -239,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Images"
+          "Brand"
         ],
         "requestBody": {
           "description": "",
@@ -247,20 +247,20 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewImages"
+                "$ref": "#/components/schemas/NewBrand"
               }
             }
           }
         }
       }
     },
-    "/images/count": {
+    "/brands/count": {
       "get": {
         "deprecated": false,
-        "description": "Retrieve the numver of images documents",
+        "description": "",
         "responses": {
           "200": {
-            "description": "Retrieve images document(s)",
+            "description": "response",
             "content": {
               "application/json": {
                 "schema": {
@@ -306,26 +306,22 @@
         },
         "summary": "",
         "tags": [
-          "Images"
+          "Brand"
         ],
         "parameters": []
       }
     },
-    "/images/random": {
+    "/brands/{id}": {
       "get": {
         "deprecated": false,
         "description": "",
         "responses": {
           "200": {
-            "description": "Retrieve images document(s)",
+            "description": "response",
             "content": {
               "application/json": {
                 "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
+                  "$ref": "#/components/schemas/Brand"
                 }
               }
             }
@@ -363,117 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Images"
-        ],
-        "parameters": []
-      }
-    },
-    "/images/homescreen": {
-      "get": {
-        "deprecated": false,
-        "description": "",
-        "responses": {
-          "200": {
-            "description": "Retrieve images document(s)",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Images"
-        ],
-        "parameters": []
-      }
-    },
-    "/images/{id}": {
-      "get": {
-        "deprecated": false,
-        "description": "Find one images record",
-        "responses": {
-          "200": {
-            "description": "Retrieve images document(s)",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Images"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Images"
+          "Brand"
         ],
         "parameters": [
           {
@@ -490,14 +376,14 @@
       },
       "put": {
         "deprecated": false,
-        "description": "Update a single images record",
+        "description": "Update a record",
         "responses": {
           "200": {
-            "description": "Retrieve images document(s)",
+            "description": "response",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Images"
+                  "$ref": "#/components/schemas/Brand"
                 }
               }
             }
@@ -535,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Images"
+          "Brand"
         ],
         "requestBody": {
           "description": "",
@@ -543,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewImages"
+                "$ref": "#/components/schemas/NewBrand"
               }
             }
           }
@@ -563,10 +449,10 @@
       },
       "delete": {
         "deprecated": false,
-        "description": "Delete a single images record",
+        "description": "Delete a record",
         "responses": {
           "200": {
-            "description": "deletes a single images based on the ID supplied",
+            "description": "deletes a single record based on the ID supplied",
             "content": {
               "application/json": {
                 "schema": {
@@ -609,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Images"
+          "Brand"
         ],
         "parameters": [
           {
@@ -628,62 +514,42 @@
   },
   "components": {
     "schemas": {
-      "Images": {
+      "Brand": {
         "required": [
           "id",
-          "iid",
-          "link"
+          "name",
+          "cover",
+          "logo"
         ],
         "properties": {
           "id": {
             "type": "string"
           },
-          "iid": {
-            "type": "uid"
-          },
-          "link": {
+          "name": {
             "type": "string"
           },
-          "device": {
-            "required": [
-              "id",
-              "name",
-              "did",
-              "cover"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "did": {
-                "type": "uid"
-              },
-              "cover": {
-                "type": "string"
-              },
-              "brand": {
-                "type": "string"
-              }
-            }
+          "cover": {
+            "type": "string"
+          },
+          "logo": {
+            "type": "string"
           }
         }
       },
-      "NewImages": {
+      "NewBrand": {
         "required": [
-          "iid",
-          "link"
+          "name",
+          "cover",
+          "logo"
         ],
         "properties": {
-          "iid": {
-            "type": "uid"
-          },
-          "link": {
+          "name": {
             "type": "string"
           },
-          "device": {
+          "cover": {
+            "type": "string"
+          },
+          "logo": {
             "type": "string"
           }
         }
@@ -692,7 +558,7 @@
   },
   "tags": [
     {
-      "name": "Images"
+      "name": "Brand"
     }
   ]
 }
