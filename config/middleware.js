@@ -12,10 +12,10 @@ module.exports = {
             "gzip"
         ],
         "order": [
-            "firetoken"
         ],
         "after": [
             "parser",
+            "firetoken",
             "router",
             "restmap"
         ]

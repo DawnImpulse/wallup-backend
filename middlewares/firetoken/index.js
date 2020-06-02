@@ -1,8 +1,11 @@
 /**
  * @info - authentication for firebase token
  */
-const {verifyMap, mapData} = require("restmap");
 const admin = require("firebase-admin");
+
+admin.initializeApp({
+    credential: admin.credential.cert(JSON.parse(process.env.SERVICE_ACCOUNT))
+});
 
 /**
  * verify token & extract uid
@@ -13,8 +16,7 @@ function verify(ctx) {
         if (token)
             admin.auth().verifyIdToken(token)
                 .then(decoded => {
-                    ctx.set("uid", decoded.uid)
-                    resolve(uid)
+                    resolve(decoded.uid)
                 })
                 .catch(err => {
                     reject("invalid token provided")
@@ -38,13 +40,16 @@ module.exports = strapi => {
 
                 if (method === "GET" && path === "/bookmarks" ||
                     method === "POST" && path === "/bookmarks" ||
-                    method === "DELETE" && path === "/bookmarks")
+                    method === "DELETE" && path.indexOf("/bookmarks") > -1)
 
                     try {
                         const uid = await verify(ctx)
-                        if (method === "GET" && path === "/bookmarks") ctx.query.uid = uid
-                        else if (method === "POST" && path === "/bookmarks") ctx.body.uid = uid
-
+                        if (method === "GET" && path === "/bookmarks")
+                            ctx.request.query ? ctx.request.query.uid = uid : ctx.request.query = {uid: uid}
+                        else if (method === "POST" && path === "/bookmarks")
+                            ctx.request.body ? ctx.request.body.uid = uid : ctx.request.body = {uid: uid}
+                        else if (method === "DELETE" && path.indexOf("/bookmarks") > -1)
+                            ctx.request.query ? ctx.request.query.uid = uid : ctx.request.query = {uid: uid}
                         await next()
                         // handle errors
                     } catch (err) {
