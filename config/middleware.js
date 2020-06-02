@@ -2,7 +2,7 @@
  * @info middleware file
  */
 module.exports = {
-    "timeout": 100,
+    "timeout": 5000,
     "load": {
         "before": [
             "responseTime",
@@ -12,11 +12,20 @@ module.exports = {
             "gzip"
         ],
         "order": [
-            "Define the middlewares load order by putting their name in this array is the right order"
+            "firetoken"
         ],
         "after": [
             "parser",
-            "router"
+            "router",
+            "restmap"
         ]
     },
+    "settings": {
+        "restmap": {
+            "enabled": true
+        },
+        "firetoken": {
+            "enabled": true
+        }
+    }
 }

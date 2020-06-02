@@ -519,7 +519,8 @@
           "id",
           "name",
           "cover",
-          "logo"
+          "logo",
+          "available"
         ],
         "properties": {
           "id": {
@@ -533,6 +534,10 @@
           },
           "logo": {
             "type": "string"
+          },
+          "available": {
+            "type": "boolean",
+            "default": true
           }
         }
       },
@@ -540,7 +545,8 @@
         "required": [
           "name",
           "cover",
-          "logo"
+          "logo",
+          "available"
         ],
         "properties": {
           "name": {
@@ -551,6 +557,10 @@
           },
           "logo": {
             "type": "string"
+          },
+          "available": {
+            "type": "boolean",
+            "default": true
           }
         }
       }

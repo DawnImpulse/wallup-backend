@@ -23,6 +23,11 @@
     },
     "brand": {
       "model": "brand"
+    },
+    "available": {
+      "type": "boolean",
+      "default": true,
+      "required": true
     }
   }
 }

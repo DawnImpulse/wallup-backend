@@ -15,8 +15,10 @@
     "mongoose-simple-random": "^0.4.1"
   },
   "dependencies": {
+    "firebase-admin": "^8.12.1",
     "knex": "<0.20.0",
     "needle": "^2.4.1",
+    "restmap": "./libs/restmap-0.1.1.tgz",
     "sqlite3": "latest",
     "strapi": "3.0.0",
     "strapi-admin": "3.0.0",

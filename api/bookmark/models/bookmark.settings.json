@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "bookmarks",
+  "info": {
+    "name": "bookmark"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "uid": {
+      "type": "string",
+      "required": false,
+      "unique": false
+    },
+    "image": {
+      "model": "images"
+    }
+  }
+}

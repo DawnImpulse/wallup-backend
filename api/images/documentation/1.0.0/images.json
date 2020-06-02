@@ -632,7 +632,8 @@
         "required": [
           "id",
           "iid",
-          "link"
+          "link",
+          "available"
         ],
         "properties": {
           "id": {
@@ -649,7 +650,8 @@
               "id",
               "name",
               "did",
-              "cover"
+              "cover",
+              "available"
             ],
             "properties": {
               "id": {
@@ -666,15 +668,23 @@
               },
               "brand": {
                 "type": "string"
+              },
+              "available": {
+                "type": "boolean"
               }
             }
+          },
+          "available": {
+            "type": "boolean",
+            "default": true
           }
         }
       },
       "NewImages": {
         "required": [
           "iid",
-          "link"
+          "link",
+          "available"
         ],
         "properties": {
           "iid": {
@@ -685,6 +695,10 @@
           },
           "device": {
             "type": "string"
+          },
+          "available": {
+            "type": "boolean",
+            "default": true
           }
         }
       }

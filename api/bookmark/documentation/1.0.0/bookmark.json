@@ -1,18 +1,18 @@
 {
   "paths": {
-    "/devices": {
+    "/bookmarks": {
       "get": {
         "deprecated": false,
-        "description": "Find all the devices's records",
+        "description": "",
         "responses": {
           "200": {
-            "description": "Retrieve devices document(s)",
+            "description": "response",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Devices"
+                    "$ref": "#/components/schemas/Bookmark"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Devices"
+          "Bookmark"
         ],
         "parameters": [
           {
@@ -194,14 +194,14 @@
       },
       "post": {
         "deprecated": false,
-        "description": "Create a new devices record",
+        "description": "Create a new record",
         "responses": {
           "200": {
-            "description": "Retrieve devices document(s)",
+            "description": "response",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Devices"
+                  "$ref": "#/components/schemas/Bookmark"
                 }
               }
             }
@@ -239,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Devices"
+          "Bookmark"
         ],
         "requestBody": {
           "description": "",
@@ -247,20 +247,20 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewDevices"
+                "$ref": "#/components/schemas/NewBookmark"
               }
             }
           }
         }
       }
     },
-    "/devices/count": {
+    "/bookmarks/count": {
       "get": {
         "deprecated": false,
-        "description": "Retrieve the numver of devices documents",
+        "description": "",
         "responses": {
           "200": {
-            "description": "Retrieve devices document(s)",
+            "description": "response",
             "content": {
               "application/json": {
                 "schema": {
@@ -306,22 +306,22 @@
         },
         "summary": "",
         "tags": [
-          "Devices"
+          "Bookmark"
         ],
         "parameters": []
       }
     },
-    "/devices/{id}": {
+    "/bookmarks/{id}": {
       "get": {
         "deprecated": false,
-        "description": "Find one devices record",
+        "description": "",
         "responses": {
           "200": {
-            "description": "Retrieve devices document(s)",
+            "description": "response",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Devices"
+                  "$ref": "#/components/schemas/Bookmark"
                 }
               }
             }
@@ -359,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Devices"
+          "Bookmark"
         ],
         "parameters": [
           {
@@ -376,14 +376,14 @@
       },
       "put": {
         "deprecated": false,
-        "description": "Update a single devices record",
+        "description": "Update a record",
         "responses": {
           "200": {
-            "description": "Retrieve devices document(s)",
+            "description": "response",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Devices"
+                  "$ref": "#/components/schemas/Bookmark"
                 }
               }
             }
@@ -421,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Devices"
+          "Bookmark"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewDevices"
+                "$ref": "#/components/schemas/NewBookmark"
               }
             }
           }
@@ -449,10 +449,10 @@
       },
       "delete": {
         "deprecated": false,
-        "description": "Delete a single devices record",
+        "description": "Delete a record",
         "responses": {
           "200": {
-            "description": "deletes a single devices based on the ID supplied",
+            "description": "deletes a single record based on the ID supplied",
             "content": {
               "application/json": {
                 "schema": {
@@ -495,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Devices"
+          "Bookmark"
         ],
         "parameters": [
           {
@@ -514,82 +514,51 @@
   },
   "components": {
     "schemas": {
-      "Devices": {
+      "Bookmark": {
         "required": [
-          "id",
-          "name",
-          "did",
-          "cover",
-          "available"
+          "id"
         ],
         "properties": {
           "id": {
             "type": "string"
           },
-          "name": {
+          "uid": {
             "type": "string"
           },
-          "did": {
-            "type": "uid"
-          },
-          "cover": {
-            "type": "string"
-          },
-          "brand": {
+          "image": {
             "required": [
               "id",
-              "name",
-              "cover",
-              "logo",
+              "iid",
+              "link",
               "available"
             ],
             "properties": {
               "id": {
                 "type": "string"
               },
-              "name": {
+              "iid": {
+                "type": "uid"
+              },
+              "link": {
                 "type": "string"
               },
-              "cover": {
-                "type": "string"
-              },
-              "logo": {
+              "device": {
                 "type": "string"
               },
               "available": {
                 "type": "boolean"
               }
             }
-          },
-          "available": {
-            "type": "boolean",
-            "default": true
           }
         }
       },
-      "NewDevices": {
-        "required": [
-          "name",
-          "did",
-          "cover",
-          "available"
-        ],
+      "NewBookmark": {
         "properties": {
-          "name": {
+          "uid": {
             "type": "string"
           },
-          "did": {
-            "type": "uid"
-          },
-          "cover": {
+          "image": {
             "type": "string"
-          },
-          "brand": {
-            "type": "string"
-          },
-          "available": {
-            "type": "boolean",
-            "default": true
           }
         }
       }
@@ -597,7 +566,7 @@
   },
   "tags": [
     {
-      "name": "Devices"
+      "name": "Bookmark"
     }
   ]
 }

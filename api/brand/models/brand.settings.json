@@ -11,7 +11,8 @@
   "attributes": {
     "name": {
       "type": "string",
-      "required": true
+      "required": true,
+      "unique": true
     },
     "cover": {
       "type": "string",
@@ -19,6 +20,11 @@
     },
     "logo": {
       "type": "string",
+      "required": true
+    },
+    "available": {
+      "type": "boolean",
+      "default": true,
       "required": true
     }
   }

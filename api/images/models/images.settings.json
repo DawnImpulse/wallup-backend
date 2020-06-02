@@ -20,6 +20,11 @@
     },
     "device": {
       "model": "devices"
+    },
+    "available": {
+      "type": "boolean",
+      "default": true,
+      "required": true
     }
   }
 }
