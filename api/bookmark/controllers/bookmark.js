@@ -15,13 +15,22 @@ module.exports = {
         try {
             if (ctx.request.body.image) {
                 if (ctx.request.body.image.match(/^[0-9a-fA-F]{24}$/)) {
+                    // check if image exists
                     const image = await strapi.query("images").findOne({_id: ctx.request.body.image})
-                    if (image != null)
-                        return await strapi.query("bookmark").create({
+                    if (image != null) {
+                        // check if bookmark exists
+                        const bk = await strapi.query("bookmark").findOne({
                             uid: ctx.request.body.uid,
                             image: ctx.request.body.image
                         })
-                    else
+                        if (bk == null)
+                            return await strapi.query("bookmark").create({
+                                uid: ctx.request.body.uid,
+                                image: ctx.request.body.image
+                            })
+                        else
+                            ctx.badRequest("bookmark already exists")
+                    } else
                         ctx.badRequest("image not exists")
                 } else
                     ctx.badRequest("invalid image id")
