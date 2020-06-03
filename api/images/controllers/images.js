@@ -5,8 +5,6 @@
  * to customize this controller
  */
 
-const {sanitizeEntity, convertRestQueryParams} = require("strapi-utils");
-
 module.exports = {
 
     /**
@@ -17,19 +15,23 @@ module.exports = {
      * @return {Promise<void>}
      */
     random: async function (ctx) {
-        const query = convertRestQueryParams(ctx.request.query);
-        try {
-            const images =  await new Promise((resolve, reject) => {
-                strapi.query("images").model.findRandom({available: true}, {}, {limit: query.limit}, (err, result) => {
-                    if (err) reject(err);
-                    else resolve(result)
-                })
-            });
-            ctx.send(images)
-            // resolve(images.map(image => sanitizeEntity(image, {model: strapi.models.images})));
+        let limit = 30
+        if (ctx.request.query && ctx.request.query._limit)
+            limit = ctx.request.query._limit
 
+        try {
+            return new Promise((resolve, reject) => {
+                strapi.query("images").model.findRandom({"available": true}, {}, {
+                        limit,
+                        populate: "device"
+                    },
+                    (err, result) => {
+                        if (err) reject(err)
+                        else resolve(result)
+                    })
+            })
         } catch (e) {
-            return ctx.badImplementation(e);
+            ctx.badImplementation(e.toString())
         }
     }
 };
