@@ -31,26 +31,5 @@ module.exports = {
         } catch (e) {
             return ctx.badImplementation(e);
         }
-    },
-
-    /**
-     * homescreen category / collections / images
-     *
-     * @param ctx
-     * @return {Promise<{collections: *, category: *}>}
-     */
-    homescreen: async function (ctx) {
-        try {
-            return {
-                collections: await strapi.query("collection").find({
-                    _limit: 10,
-                    _sort: 'updatedAt:desc'
-                }),
-                category: await strapi.query("category").find({_sort: 'name:asc'})
-            }
-        } catch (e) {
-            console.log(e);
-            return ctx.badImplementation(e)
-        }
     }
 };
