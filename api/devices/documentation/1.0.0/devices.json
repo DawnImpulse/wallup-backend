@@ -563,7 +563,7 @@
           },
           "available": {
             "type": "boolean",
-            "default": true
+            "default": false
           }
         }
       },
@@ -589,7 +589,7 @@
           },
           "available": {
             "type": "boolean",
-            "default": true
+            "default": false
           }
         }
       }

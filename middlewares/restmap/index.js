@@ -10,7 +10,7 @@ module.exports = strapi => {
         await next();
         if(ctx.headers.restmap){
           if(verifyMap(ctx.headers.restmap)){
-            ctx.body = mapData(ctx.headers.restmap, ctx.body)
+            ctx.body = mapData(ctx.headers.restmap, JSON.parse(JSON.stringify(ctx.body)))
           }
         }
       });

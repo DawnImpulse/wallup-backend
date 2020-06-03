@@ -19,12 +19,13 @@ module.exports = {
     random: async function (ctx) {
         const query = convertRestQueryParams(ctx.request.query);
         try {
-            return await new Promise((resolve, reject) => {
-                strapi.query("images").model.findRandom({}, {}, {limit: query.limit}, (err, result) => {
+            const images =  await new Promise((resolve, reject) => {
+                strapi.query("images").model.findRandom({available: true}, {}, {limit: query.limit}, (err, result) => {
                     if (err) reject(err);
                     else resolve(result)
                 })
             });
+            ctx.send(images)
             // resolve(images.map(image => sanitizeEntity(image, {model: strapi.models.images})));
 
         } catch (e) {
